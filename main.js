@@ -38,6 +38,7 @@ function buttonClick() {
 		currentPlayer++;
 		if (currentPlayer>totalPlayers) {
 			document.getElementById("action").innerHTML = "";
+			document.getElementById("currentWord").innerHTML = "";
 		}
 		else {
 			document.getElementById("playerNum").innerHTML = currentPlayer;
