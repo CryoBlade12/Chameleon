@@ -2,21 +2,26 @@ var currentPlayer;
 var totalPlayers = 4;
 var currentState;
 var chameleon;
+var wordList;
+var realWordIndex;
 
 function setup() {
 	currentPlayer = 0;
 	currentState = 0;
 	document.getElementById("playerNum").innerHTML = currentPlayer;
 	chameleon = Math.floor(Math.random() * totalPlayers) + 1;
+	var allWords = document.getElementById("wordList").innerHTML;
+	wordList = allWords.split(",");
+	realWordIndex = Math.floor(Math.random() * wordList.length);
 };
 
 function getWord(playerNum) {
 	var word = "blah blah";
 	if(playerNum == chameleon) {
-		//give out fake word
+		word = "You Are The Chameleon! Try To Blend In!";
 	}
 	else {
-		//give out real word
+		word = wordList[realWordIndex];
 	}
 	return word;
 }
