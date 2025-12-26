@@ -1,0 +1,28 @@
+.hidden {
+	display: none;
+}
+body {
+	background-image: linear-gradient(to bottom right,#38B0B8,#3CB838);
+	font-family: "Courier New";
+	font-weight: bold;
+}
+#title {
+	font-size: 128px;
+	color: #593416;
+}
+#currentPlayer {
+	font-size: 72px;
+	color: white;
+}
+#currentWord {
+	font-size: 48px;
+	color: #444444;
+}
+button:hover {background-color: grey; color: #F0E693}
+button {
+	background-color: #F0E693;
+	color: #BC952C;
+	border-radius: 8px;
+	font-size: 52px;
+	cursor: progress;
+}
