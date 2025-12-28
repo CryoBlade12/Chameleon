@@ -1,17 +1,29 @@
 var currentPlayer;
-var totalPlayers = 4;
+var totalPlayers;
 var currentState;
 var chameleon;
 var wordList;
 var realWordIndex;
+var selectedCategory;
 
 function setup() {
 	currentPlayer = 0;
 	currentState = 0;
 	document.getElementById("playerNum").innerHTML = currentPlayer;
+	totalPlayers = prompt("Input The Number of Players:");
+	totalPlayers = Number.isInteger(totalPlayers) ? totalPlayers : 4;
+	
 	chameleon = Math.floor(Math.random() * totalPlayers) + 1;
-	var allWords = document.getElementById("wordList").innerHTML;
-	wordList = allWords.split(",");
+	var allWords = JSON.parse(document.getElementById("wordList").innerHTML);
+	var allKeys = Object.keys(allWords);
+	
+	// Randomly select a key
+	var categoryIndex = Math.floor(Math.random() * allKeys.length);
+	
+	// randomly select a word
+	selectedCategory = allKeys[categoryIndex];
+	document.getElementById("currentCategory").innerHTML = selectedCategory;
+	wordList = allWords[selectedCategory];
 	realWordIndex = Math.floor(Math.random() * wordList.length);
 };
 
