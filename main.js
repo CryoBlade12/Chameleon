@@ -10,7 +10,7 @@ function setup() {
 	currentPlayer = 0;
 	currentState = 0;
 	document.getElementById("playerNum").innerHTML = currentPlayer;
-	totalPlayers = prompt("Input The Number of Players:");
+	totalPlayers = parseInt(prompt("Input The Number of Players:"));
 	totalPlayers = Number.isInteger(totalPlayers) ? totalPlayers : 4;
 	
 	chameleon = Math.floor(Math.random() * totalPlayers) + 1;
